@@ -1,25 +1,42 @@
+import React from 'react';
+import { Route, Switch, BrowserRouter as Router } from 'react-router-dom';
 import logo from './logo.svg';
 import './App.css';
+import PlanetsDisplay from './PlanetsDisplay.js';
+import HomePage from './HomePage.js';
+//also import: Header, DetailPlanet, CreatePlanet
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+//note
+
+export default class App extends React.Component {
+  render() {
+    return (
+      <div>
+        <Router>
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={(routerProps) => <HomePage {...routerProps} />}
+            />
+            <Route
+              path="/planets"
+              exact
+              render={(routerProps) => <PlanetsDisplay {...routerProps} />}
+            />
+            <Route
+              path="/planets/:id"
+              exact
+              render={(routerProps) => <DetailPlanet {...routerProps} />}
+            />
+            <Route
+              path="/planets"
+              exact
+              render={(routerProps) => <PlanetsDisplay {...routerProps} />}
+            />
+          </Switch>
+        </Router>
+      </div>
+    );
+  }
 }
-
-export default App;
