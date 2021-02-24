@@ -1,13 +1,14 @@
 import React, { Component } from 'react'
-import { getPlanet, makePlanet } from './LectureNotes'
-//import makePlanet from api-utils
+import { makePlanet } from './API-utils.js';
 
 export default class CreatePlanet extends Component {
 
     state = {
         name: '',
-        diameter: 2,
+        diameter: 4,
+        gravity: '',
         magnetic_field_strong: false,
+        owner_id: 1,
         type_id: 1
     }
 
@@ -29,14 +30,12 @@ export default class CreatePlanet extends Component {
 
     //for create button:
     handleSubmit = async (e) => {
-        e.preventDefault(); //maintains form from resetting, etc
+        e.preventDefault();
 
-        const planet = await makePlanet(this.state);
-
-        //makePlanet(this.state); //b/c state is the info about the new planet
+        await makePlanet(this.state);
 
         // alert(JSON.stringify(candy, true, 2));
-        this.props.history.push('/list'); //procedural redirect ...push is a method filed under history in props
+        this.props.history.push('/planets'); //procedural redirect ...push is a method filed under history in props
     }
 
 

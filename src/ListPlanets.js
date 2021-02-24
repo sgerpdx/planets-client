@@ -1,9 +1,7 @@
 import React from 'react';
-import request from 'superagent';
-import style from './PlanetsDisplay.css';
-import PlanetItem from './PlanetItem.js';
-import JupiterImg from './jupiter.jpg';
-import { getPlanets, getTypes, getPlanet, makePlanet, deletePlanet } from './API-utils.js';
+//import request from 'superagent';
+import style from './ListPlanets.css';
+import { getPlanets } from './API-utils.js';
 
 export default class PlanetsDisplay extends React.Component {
 
@@ -37,13 +35,17 @@ export default class PlanetsDisplay extends React.Component {
                     }
                 </div> */}
 
-                <Link to={`/planets/${planet.id}`}>
-                    <div>
-                        {this.state.planets.map(planet => <div>
-                            <p>{planet.planet}</p>
-                        </div>)}
-                    </div>
-                </Link>
+                {/* <Link to={`/planets/${planet.id}`}> */}
+                <div className="planet-gallery">
+                    {this.state.planets.map(planet => <div className="planet-orb">
+                        <p>{planet.planet}</p>
+                        <p>{planet.diameter}</p>
+                        <p>{planet.gravity}</p>
+                        <p>{planet.magnetic_field_strong}</p>
+                        <p>{planet.type_id}</p>
+                    </div>)}
+                </div>
+
 
             </>
 

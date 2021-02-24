@@ -1,0 +1,19 @@
+body {
+
+    background-color: royalblue;
+    color: lightgray;
+}
+
+.planet-gallery {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+
+.planet-orb {
+    margin: 10px;
+    border: solid 1px lightgrey;
+    padding: 4px;
+    width: 100px;
+    text-align: center;
+}
