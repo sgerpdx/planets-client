@@ -1,17 +1,33 @@
-body {
+.listBody {
     background-color: royalblue;
-    color: lightgray;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
-.planet-gallery {
+.banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.planetGallery {
     display: flex;
     flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    width: 70vw;
 }
 
-.planet-orb {
+.planetOrb {
     margin: 10px;
     border: solid 1px lightgrey;
     padding: 4px;
-    width: 100px;
+    width: 200px;
     text-align: center;
+    background-color: white;
+    color: gray;
 }

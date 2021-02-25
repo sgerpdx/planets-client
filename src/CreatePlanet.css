@@ -1,0 +1,8 @@
+.formArea {
+    background-color: royalblue;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+} 

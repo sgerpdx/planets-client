@@ -1,7 +1,7 @@
 import React from 'react';
 //import request from 'superagent';
 //import './ListPlanets.css';
-import style from './ListPlanets.css';
+import styles from './ListPlanets.css';
 import { getPlanets } from './API-utils.js';
 import { Link } from 'react-router-dom';
 
@@ -28,37 +28,22 @@ export default class PlanetsDisplay extends React.Component {
     render() {
 
         return (
-            <>
-
-                {/* <div className="presentation-square">
-                    {this.state.loading
-                        ? <JupiterImg />
-                        : <div>{spaceFacts}</div>
-                    }
-                </div> */}
-
-                {/* <Link to={`/planets/${planet.id}`}> */}
-                <div className="planet-gallery">
+            <div className={styles.listBody}>
+                <p className="banner">Behold a Selection of Planets</p>
+                <div className={styles.planetGallery}>
                     {this.state.planets.map(planet =>
                         <Link to={`/planets/${planet.id}`} key={planet.planet}>
-                            <div className="planet-orb">
-                                <p>{planet.planet}</p>
-                                <p>{planet.diameter}</p>
-                                <p>{planet.gravity}</p>
-                                <p>{planet.magnetic_field_strong}</p>
-                                <p>{planet.type_id}</p>
+                            <div className={styles.planetOrb}>
+                                <p>{planet.planet} - {planet.id}</p>
+                                <p>diameter: {planet.diameter}km</p>
+                                <p>gravity: {planet.gravity}x earth</p>
+                                <p>very magnetic? {planet.magnetic_field_strong}</p>
+                                <p>type code: {planet.type_id}</p>
                             </div>
                         </Link>
                     )}
                 </div>
-
-
-            </>
-
-
-
-
-
+            </div>
         )
     }
 }
