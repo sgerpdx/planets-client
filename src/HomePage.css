@@ -1,0 +1,13 @@
+.data-place {
+    display: flex;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.introduction {
+    background-color: white;
+    padding: 5px;
+    border-radius: 5px;
+}
