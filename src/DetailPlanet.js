@@ -10,7 +10,7 @@ export default class DetailPlanet extends Component {
         magnetic_field_strong: false,
         owner_id: 1,
         planet_type: '',
-        type_id: 1 //this might be losable, but not sure...is it necc for the checkbox to work?
+        type_id: 1
     }
 
     componentDidMount = async () => {
@@ -18,7 +18,6 @@ export default class DetailPlanet extends Component {
 
         const planet = await getPlanet(this.props.match.params.id);
 
-        //this.setState({ planets: planets })
         this.setState({
             ...planet,
             types
@@ -65,17 +64,9 @@ export default class DetailPlanet extends Component {
 
     render() {
 
-        console.log(this.state.planet);
-        console.log(this.state.diameter);
-        console.log(this.state.gravity);
-        console.log(this.state.magnetic_field_strong);
-        console.log(this.state.owner_id);
-        console.log(this.state.planet_type);
-
-
         return (
-            <div className={styles.formArea}>
-                <form onSubmit={this.handleSubmit}>
+            <div className="formArea">
+                <form className="actualForm" onSubmit={this.handleSubmit}>
                     <label>
                         Planet Name
                         <input value={this.state.planet} onChange={this.handleNameChange}></input>
@@ -91,13 +82,11 @@ export default class DetailPlanet extends Component {
                     <label>Magnetic Field Strong?
                         <input value={this.state.magnetic_field_strong} type="checkbox" checked={this.state.magnetic_field_strong}
                             onChange={this.handleMagneticField}></input>
-                        {/* we can leave the {} segment without an explicit conditional because it is truthy */}
                     </label>
                     <label>Type?
                         <select onChange={this.handleTypeChange}>
                             <option value="1" selected={this.state.type_id === 1}>Terrestrial</option>
                             <option value="2" selected={this.state.type_id === 2}>Gaseous</option>
-                            {/* are we still using the value now that we have selected? should value use {} or ""? */}
                         </select>
                     </label>
                     <button onClick={this.handleSubmit}>Terraform</button>

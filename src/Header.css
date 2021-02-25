@@ -1,0 +1,26 @@
+.navBar {
+    height: 15vh;
+    background-image: url('./earth-marble-header_02.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: royalblue;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: double 1px rgb(141, 162, 228);
+}
+
+.navButton {
+    width: 100px;
+    border: none;
+    border-radius: 8px;
+    background-color: lavender;
+    color: rgb(68, 68, 68);
+}
+
+.titleArea {
+    color: white;
+    font-size: 2em;
+}

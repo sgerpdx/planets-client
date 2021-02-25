@@ -1,5 +1,4 @@
 import React from 'react';
-//import request from 'superagent';
 import styles from './ListPlanets.css';
 import { getPlanets } from './API-utils.js';
 import { Link } from 'react-router-dom';
@@ -35,12 +34,12 @@ export default class PlanetsDisplay extends React.Component {
 
 
         return (
-            <div className={styles.listBody}>
-                <p className="banner">Behold a Selection of Planets</p>
-                <div className={styles.planetGallery}>
+            <div className="listBody">
+                <p className="banner"></p>
+                <div className="planetGallery">
                     {this.state.planets.map(planet =>
                         <Link to={`/planets/${planet.id}`} key={planet.planet}>
-                            <div className={styles.planetOrb}>
+                            <div className="planetOrb">
                                 <p>{planet.planet} - {planet.id}</p>
                                 <p>diameter: {planet.diameter}km</p>
                                 <p>gravity: {planet.gravity}x earth</p>

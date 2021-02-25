@@ -7,7 +7,6 @@ import DetailPlanet from './DetailPlanet.js';
 import CreatePlanet from './CreatePlanet.js';
 import Header from './Header.js';
 
-
 export default class App extends React.Component {
   render() {
     return (

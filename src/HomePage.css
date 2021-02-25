@@ -1,11 +1,9 @@
-body {
-    background-color: grey;
-    display: flex;
-    justify-content: center;
-}
-
 .data-place {
+    display: flex;
     color: white;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .introduction {

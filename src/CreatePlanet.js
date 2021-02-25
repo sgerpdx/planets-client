@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from './CreatePlanet.js';
+import styles from './CreatePlanet.css';
 import { makePlanet } from './API-utils.js';
 
 
@@ -32,8 +32,6 @@ export default class CreatePlanet extends Component {
                 ? true
                 : false
         })
-    // simpler way:
-    // magnetic_field_strong: !this.state.magnetic_field_strong //(this is the convention for toggling)
 
 
     handleTypeChange = (e) =>
@@ -44,7 +42,7 @@ export default class CreatePlanet extends Component {
     handleSubmit = async (e) => {
         e.preventDefault();
         await makePlanet(this.state);
-        this.props.history.push('/planets'); //procedural redirect ...push is a method filed under history in props
+        this.props.history.push('/planets');
     }
 
 
@@ -59,8 +57,8 @@ export default class CreatePlanet extends Component {
         console.log(this.state.type_id);
 
         return (
-            <div className={styles.formArea}>
-                <form onSubmit={this.handleSubmit}>
+            <div className="formArea">
+                <form className="actualForm" onSubmit={this.handleSubmit}>
                     <label>
                         Planet Name
                         <input onChange={this.handleNameChange}></input>
@@ -76,13 +74,11 @@ export default class CreatePlanet extends Component {
                     <label>Magnetic Field Strong?
                         <input type="checkbox" checked={this.state.magnetic_field_strong}
                             onChange={this.handleMagneticField}></input>
-                        {/* we can leave the {} segment without an explicit conditional because it is truthy */}
                     </label>
                     <label>Type?
                         <select onChange={this.handleTypeChange}>
                             <option value="1" selected={this.state.type_id === 1}>Terrestrial</option>
                             <option value="2" selected={this.state.type_id === 2}>Gaseous</option>
-                            {/* are we still using the value now that we have selected? should value use {} or ""? */}
                         </select>
                     </label>
                     <button>Create</button>
@@ -91,5 +87,3 @@ export default class CreatePlanet extends Component {
         )
     }
 }
-
-
