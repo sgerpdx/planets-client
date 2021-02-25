@@ -1,5 +1,4 @@
 body {
-
     background-color: royalblue;
     color: lightgray;
 }
@@ -7,7 +6,6 @@ body {
 .planet-gallery {
     display: flex;
     flex-wrap: wrap;
-
 }
 
 .planet-orb {
