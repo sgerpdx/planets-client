@@ -2,9 +2,10 @@ import React, { Component } from 'react'
 import styles from './CreatePlanet.js';
 import { makePlanet } from './API-utils.js';
 
+
 export default class CreatePlanet extends Component {
     state = {
-        name: '',
+        planet: '',
         diameter: 4,
         gravity: '',
         magnetic_field_strong: false,
@@ -32,7 +33,7 @@ export default class CreatePlanet extends Component {
                 : false
         })
     // simpler way:
-    // magnetic_field_strong: !this.state.magnetic_field_strong (this is the convention for toggling)
+    // magnetic_field_strong: !this.state.magnetic_field_strong //(this is the convention for toggling)
 
 
     handleTypeChange = (e) =>
@@ -50,7 +51,12 @@ export default class CreatePlanet extends Component {
 
     render() {
 
-        //console.log();
+        console.log(this.state.planet);
+        console.log(this.state.diameter);
+        console.log(this.state.gravity);
+        console.log(this.state.magnetic_field_strong);
+        console.log(this.state.owner_id);
+        console.log(this.state.type_id);
 
         return (
             <div className={styles.formArea}>

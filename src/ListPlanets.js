@@ -1,6 +1,5 @@
 import React from 'react';
 //import request from 'superagent';
-//import './ListPlanets.css';
 import styles from './ListPlanets.css';
 import { getPlanets } from './API-utils.js';
 import { Link } from 'react-router-dom';
