@@ -1,5 +1,5 @@
 import React from 'react';
-import style from './HomePage.css';
+import './HomePage.css';
 import { NavLink } from 'react-router-dom';
 
 export default class HomePage extends React.Component {

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from './CreatePlanet.css';
+import './CreatePlanet.css';
 import { makePlanet } from './API-utils.js';
 
 

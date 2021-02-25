@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from './ListPlanets.css';
+import './ListPlanets.css';
 import { getPlanets } from './API-utils.js';
 import { Link } from 'react-router-dom';
 

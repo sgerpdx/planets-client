@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { getPlanet, updatePlanet, deletePlanet, getTypes } from './API-utils.js'
-import styles from './CreatePlanet.css'
+import './CreatePlanet.css'
 
 export default class DetailPlanet extends Component {
     state = {
