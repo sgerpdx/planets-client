@@ -9,7 +9,8 @@ export default class DetailPlanet extends Component {
         gravity: '',
         magnetic_field_strong: false,
         owner_id: 1,
-        type_id: 1
+        planet_type: '',
+        type_id: 1 //this might be losable, but not sure...is it necc for the checkbox to work?
     }
 
     componentDidMount = async () => {
@@ -52,13 +53,13 @@ export default class DetailPlanet extends Component {
 
     handleSubmit = async (e) => {
         e.preventDefault();
-        await updatePlanet(this.state);
+        await updatePlanet(this.props.match.params.id, this.state);
         this.props.history.push('/planets');
     }
 
     handleDelete = async (e) => {
         e.preventDefault();
-        await deletePlanet(this.state);
+        await deletePlanet(this.props.match.params.id);
         this.props.history.push('/planets');
     }
 
@@ -69,7 +70,7 @@ export default class DetailPlanet extends Component {
         console.log(this.state.gravity);
         console.log(this.state.magnetic_field_strong);
         console.log(this.state.owner_id);
-        console.log(this.state.type_id);
+        console.log(this.state.planet_type);
 
 
         return (
@@ -99,8 +100,8 @@ export default class DetailPlanet extends Component {
                             {/* are we still using the value now that we have selected? should value use {} or ""? */}
                         </select>
                     </label>
-                    <button>Terraform</button>
-                    <button>Destroy</button>
+                    <button onClick={this.handleSubmit}>Terraform</button>
+                    <button onClick={this.handleDelete}>Destroy</button>
                 </form>
             </div>
         )

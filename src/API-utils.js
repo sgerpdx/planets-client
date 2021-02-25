@@ -46,6 +46,6 @@ export async function deletePlanet(id) {
 
 // this is for the /put endpoint:
 export async function updatePlanet(id, aParticularPlanet) {
-    const { body } = await request.post(`${URL}/planets/${id}`).send(aParticularPlanet);
+    const { body } = await request.put(`${URL}/planets/${id}`).send(aParticularPlanet);
     return body;
 }

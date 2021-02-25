@@ -21,10 +21,18 @@ export default class PlanetsDisplay extends React.Component {
         this.setState({ loading: false });
     }
 
-
+    magneticFieldCheck(strength) {
+        if (strength === true) {
+            return 'yes';
+        } else {
+            return 'no';
+        }
+    }
 
 
     render() {
+
+
 
         return (
             <div className={styles.listBody}>
@@ -36,8 +44,8 @@ export default class PlanetsDisplay extends React.Component {
                                 <p>{planet.planet} - {planet.id}</p>
                                 <p>diameter: {planet.diameter}km</p>
                                 <p>gravity: {planet.gravity}x earth</p>
-                                <p>very magnetic? {planet.magnetic_field_strong}</p>
-                                <p>type code: {planet.type_id}</p>
+                                <p>very magnetic? {this.magneticFieldCheck(planet.magnetic_field_strong)}</p>
+                                <p>type: {planet.planet_type}</p>
                             </div>
                         </Link>
                     )}
